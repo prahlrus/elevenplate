@@ -1,0 +1,22 @@
+A [teen.0] in [situation].
+
+;;teen 2
+nerd&nerds
+jock&jocks
+goth&goths
+prep&preps
+
+;;situation
+trouble with other [teen.1]
+trouble with [authority]
+love with a [monster] [!teen.0]
+
+;;authority
+their parents
+the law
+the vice-principal
+
+;;monster
+ghost
+vampire
+werewolf
