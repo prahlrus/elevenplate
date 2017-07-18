@@ -102,7 +102,11 @@ def expand(s,context):
 			repline = context[tab]
 		
 		if attr is not None:
-			rep = repline[int(attr)]
+			try:
+				rep = repline[int(attr)]
+			except TypeError:
+				print "Semantic Error: Tried to select column " + str(attr) + " of the table " + tab + " but table does not have multiple columns."
+				rep = repline
 		else:
 			rep = repline
 		
@@ -121,7 +125,10 @@ def expand(s,context):
 	for start,end,rep in replacements:
 		if start > pos:
 			new_s += s[pos:start]
-		new_s += rep
+		try:
+			new_s += rep
+		except TypeError:
+			print "Semantic Error: Tried to replace " + s[start:end] + " but no column of a multi-column table was specified."
 		pos = end
 	if pos < len(s):
 		new_s += s[pos:len(s)]
